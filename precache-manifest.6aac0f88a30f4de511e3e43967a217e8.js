@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e1ae2c698981441d84164da27890a82f",
+    "revision": "37003209ad87e66f3f123dbbc12d2edd",
     "url": "/altertech/index.html"
   },
   {
-    "revision": "cc3a0ab4bb8727239ec7",
+    "revision": "919a7a6d9ff65d4655a6",
     "url": "/altertech/static/css/main.f56a913d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/altertech/static/js/2.865e5353.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cc3a0ab4bb8727239ec7",
-    "url": "/altertech/static/js/main.c4dc3ff9.chunk.js"
+    "revision": "919a7a6d9ff65d4655a6",
+    "url": "/altertech/static/js/main.56b4b907.chunk.js"
   },
   {
     "revision": "b8607c0ab73580c9f943",
