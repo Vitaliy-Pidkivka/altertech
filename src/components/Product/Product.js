@@ -7,7 +7,7 @@ import {makeStyles} from "@material-ui/styles";
 
 const useStyles = makeStyles({
     error: {
-        boxShadow: '0 0 3px red'
+        border: '3px solid red'
     }
 })
 
@@ -35,8 +35,24 @@ const Product = ({id, name, count, cost, totalCost, removeProduct, changeProduct
             }
         }
     }
+    const changeCost = (e) => {
+        if (e.key === 'Enter') {
+            if (tempValue != null) {
+                console.log(typeof +tempValue)
+                changeProductCost(id, +tempValue)
+                setIsEditCost(false)
+            } else {
+                setIsError(true)
+            }
+        }
+    }
     const onChange = (e) => {
-        setTempValue(e.currentTarget.value)
+            if(!isNaN(+e.currentTarget.value)){
+                setTempValue(+e.currentTarget.value)
+            } else {
+                setIsError(true)
+            }
+
     }
 
     return (
@@ -79,6 +95,7 @@ const Product = ({id, name, count, cost, totalCost, removeProduct, changeProduct
                                       type="text"
                                       autoFocus={true}
                                       onChange={onChange}
+                                      onKeyPress={changeCost}
                 />}
             </TableCell>
             <TableCell align="right">
