@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/altertech/static/css/main.f56a913d.chunk.css",
+    "main.js": "/altertech/static/js/main.c4dc3ff9.chunk.js",
+    "main.js.map": "/altertech/static/js/main.c4dc3ff9.chunk.js.map",
+    "runtime-main.js": "/altertech/static/js/runtime-main.dac34f9e.js",
+    "runtime-main.js.map": "/altertech/static/js/runtime-main.dac34f9e.js.map",
+    "static/js/2.865e5353.chunk.js": "/altertech/static/js/2.865e5353.chunk.js",
+    "static/js/2.865e5353.chunk.js.map": "/altertech/static/js/2.865e5353.chunk.js.map",
+    "index.html": "/altertech/index.html",
+    "precache-manifest.7f7612750b0486fd36b8a4bb977c8316.js": "/altertech/precache-manifest.7f7612750b0486fd36b8a4bb977c8316.js",
+    "service-worker.js": "/altertech/service-worker.js",
+    "static/css/main.f56a913d.chunk.css.map": "/altertech/static/css/main.f56a913d.chunk.css.map",
+    "static/js/2.865e5353.chunk.js.LICENSE.txt": "/altertech/static/js/2.865e5353.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dac34f9e.js",
+    "static/js/2.865e5353.chunk.js",
+    "static/css/main.f56a913d.chunk.css",
+    "static/js/main.c4dc3ff9.chunk.js"
+  ]
+}
