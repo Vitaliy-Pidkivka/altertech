@@ -11,5 +11,4 @@
 ##### - To sort products click on headers of the table
 ##### - To change product count or product cost make double click on them
 ##### - To set value press 'Enter'
-##### - Click outside the product field to cancel the
-changes
+##### - Click outside the product field to cancel the changes
