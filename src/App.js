@@ -15,7 +15,7 @@ import {
     addNewProduct,
     changeProductCost,
     changeProductCount,
-    removeProduct,
+    removeProduct, sortCostAscending, sortCountAscending, sortTotalCostAscending,
 } from "./redux/appReducer";
 import {getAppProducts, getState} from "./redux/appSelectors";
 
@@ -37,15 +37,25 @@ const useStyles = makeStyles({
         height: '160px',
         overflowY: 'auto',
     },
-    empty:{
+    empty: {
         display: 'none'
+    },
+    btn:{
+        transition: 'all .3s ease',
+       '&:hover':{
+           cursor: 'pointer',
+           background: 'gray'
+       }
     }
 });
 
 
-const App = ({products, addNewProduct, removeProduct, changeProductCount, changeProductCost}) => {
+const App = (props) => {
+    const {products, addNewProduct, removeProduct, changeProductCount,
+        changeProductCost, sortCountAscending, sortCostAscending, sortTotalCostAscending} = props
     const classes = useStyles()
-    const {title, paper, table, body, empty} = classes
+    const {title, paper, table, body, empty, btn} = classes
+
 
     const onSubmit = (data) => {
         addNewProduct(data)
@@ -63,10 +73,22 @@ const App = ({products, addNewProduct, removeProduct, changeProductCount, change
                     >
                         <TableHead>
                             <TableRow>
-                                <TableCell>Name</TableCell>
-                                <TableCell align="right">Count</TableCell>
-                                <TableCell align="right">Cost for 1</TableCell>
-                                <TableCell align="right">Total Cost</TableCell>
+                                <TableCell className={btn}
+
+                                >
+                                    Name</TableCell>
+                                <TableCell className={btn}
+                                           align="right"
+                                           onClick={()=> {sortCountAscending()}}
+                                >Count</TableCell>
+                                <TableCell className={btn}
+                                           align="right"
+                                           onClick={()=>{sortCostAscending()}}
+                                >Cost for 1</TableCell>
+                                <TableCell className={btn}
+                                           align="right"
+                                           onClick={()=>{sortTotalCostAscending()}}
+                                >Total Cost</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody className={body}>
@@ -98,5 +120,6 @@ let mapStateToProps = (state) => ({
     products: getAppProducts(state),
     state: getState(state)
 })
-export default connect(mapStateToProps, {addNewProduct, removeProduct, changeProductCount, changeProductCost})(App);
+export default connect(mapStateToProps, {addNewProduct, removeProduct,
+    changeProductCount, changeProductCost, sortCountAscending, sortCostAscending, sortTotalCostAscending})(App);
 
