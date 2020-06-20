@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/altertech/static/css/main.7653558c.chunk.css",
-    "main.js": "/altertech/static/js/main.8b6b23ee.chunk.js",
-    "main.js.map": "/altertech/static/js/main.8b6b23ee.chunk.js.map",
+    "main.js": "/altertech/static/js/main.5c613b1f.chunk.js",
+    "main.js.map": "/altertech/static/js/main.5c613b1f.chunk.js.map",
     "runtime-main.js": "/altertech/static/js/runtime-main.c708e3b6.js",
     "runtime-main.js.map": "/altertech/static/js/runtime-main.c708e3b6.js.map",
-    "static/js/2.a3b3439d.chunk.js": "/altertech/static/js/2.a3b3439d.chunk.js",
-    "static/js/2.a3b3439d.chunk.js.map": "/altertech/static/js/2.a3b3439d.chunk.js.map",
+    "static/js/2.c77c8a52.chunk.js": "/altertech/static/js/2.c77c8a52.chunk.js",
+    "static/js/2.c77c8a52.chunk.js.map": "/altertech/static/js/2.c77c8a52.chunk.js.map",
     "index.html": "/altertech/index.html",
-    "precache-manifest.2c5c5728ec9e201af9b68ede92c89d2a.js": "/altertech/precache-manifest.2c5c5728ec9e201af9b68ede92c89d2a.js",
+    "precache-manifest.b3bd8d282a41e4f7f06b026218d69aa2.js": "/altertech/precache-manifest.b3bd8d282a41e4f7f06b026218d69aa2.js",
     "service-worker.js": "/altertech/service-worker.js",
     "static/css/main.7653558c.chunk.css.map": "/altertech/static/css/main.7653558c.chunk.css.map",
-    "static/js/2.a3b3439d.chunk.js.LICENSE.txt": "/altertech/static/js/2.a3b3439d.chunk.js.LICENSE.txt"
+    "static/js/2.c77c8a52.chunk.js.LICENSE.txt": "/altertech/static/js/2.c77c8a52.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c708e3b6.js",
-    "static/js/2.a3b3439d.chunk.js",
+    "static/js/2.c77c8a52.chunk.js",
     "static/css/main.7653558c.chunk.css",
-    "static/js/main.8b6b23ee.chunk.js"
+    "static/js/main.5c613b1f.chunk.js"
   ]
 }
