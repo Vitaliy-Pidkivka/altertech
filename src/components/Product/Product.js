@@ -7,18 +7,31 @@ import {makeStyles} from "@material-ui/styles";
 
 const useStyles = makeStyles({
     error: {
-        border: '3px solid red'
+        border: '3px solid red',
+        outline: 'none',
+        boxShadow: '0 0 4px red'
+    },
+    cursor: {
+        cursor: 'pointer',
+        transition: 'all .3s ease',
+        '&:hover': {
+            background: 'yellow'
+        }
     }
 })
 
 const Product = ({id, name, count, cost, totalCost, removeProduct, changeProductCount, changeProductCost}) => {
     const classes = useStyles()
-    const {error} = classes
+    const {error, cursor} = classes
 
     const [isEditCount, setIsEditCount] = useState(false)
     const [isEditCost, setIsEditCost] = useState(false)
     const [isError, setIsError] = useState(false)
-    const [tempValue, setTempValue] = useState(null);
+
+    useEffect(() => {
+        changeProductCount(id, count)
+        changeProductCost(id, cost)
+    }, [changeProductCount, count, changeProductCost, cost, id])
 
     const onRemove = (id) => {
         removeProduct(id)
@@ -26,34 +39,21 @@ const Product = ({id, name, count, cost, totalCost, removeProduct, changeProduct
 
     const changeCount = (e) => {
         if (e.key === 'Enter') {
-            if (tempValue != null) {
-                console.log(typeof +tempValue)
-                changeProductCount(id, +tempValue)
+            if (!isNaN(+e.currentTarget.value)) {
+                changeProductCount(id, e.currentTarget.value)
                 setIsEditCount(false)
-            } else {
-                setIsError(true)
-            }
+            } else {setIsError(true)}
         }
     }
     const changeCost = (e) => {
         if (e.key === 'Enter') {
-            if (tempValue != null) {
-                console.log(typeof +tempValue)
-                changeProductCost(id, +tempValue)
+            if (!isNaN(+e.currentTarget.value)) {
+                changeProductCost(id, +e.currentTarget.value)
                 setIsEditCost(false)
-            } else {
-                setIsError(true)
-            }
+            } else {setIsError(true)}
         }
     }
-    const onChange = (e) => {
-            if(!isNaN(+e.currentTarget.value)){
-                setTempValue(+e.currentTarget.value)
-            } else {
-                setIsError(true)
-            }
 
-    }
 
     return (
         <TableRow key={id}>
@@ -62,12 +62,12 @@ const Product = ({id, name, count, cost, totalCost, removeProduct, changeProduct
                 {name}
             </TableCell>
             <TableCell align="right"
+                       className={cursor}
                        onDoubleClick={() => {
-                           setTempValue('')
                            setIsEditCount(true)
+                           setIsError(false)
                        }}
                        onBlur={() => {
-
                            setIsEditCount(false)
                        }}
 
@@ -76,14 +76,15 @@ const Product = ({id, name, count, cost, totalCost, removeProduct, changeProduct
                 {isEditCount && <input className={(isError && error) || ''}
                                        type="text"
                                        autoFocus={true}
-                                       onChange={onChange}
                                        onKeyPress={changeCount}
+                                       placeholder={count}
                 />}
             </TableCell>
             <TableCell align="right"
+                       className={cursor}
                        onDoubleClick={() => {
                            setIsEditCost(true)
-                           setTempValue('')
+                           setIsError(false)
                        }}
                        onBlur={() => {
                            setIsEditCost(false)
@@ -94,8 +95,8 @@ const Product = ({id, name, count, cost, totalCost, removeProduct, changeProduct
                 {isEditCost && <input className={(isError && error) || ''}
                                       type="text"
                                       autoFocus={true}
-                                      onChange={onChange}
                                       onKeyPress={changeCost}
+                                      placeholder={cost}
                 />}
             </TableCell>
             <TableCell align="right">

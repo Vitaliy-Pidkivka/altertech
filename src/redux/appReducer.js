@@ -1,7 +1,10 @@
-const ADD_PRODUCT = 'shopBasket/ADD-PRODUCT';
-const REMOVE_PRODUCT = 'shopBasket/REMOVE-PRODUCT';
-const CHANGE_PRODUCT_COUNT = 'shopBasket/CHANGE-PRODUCT-COUNT';
-const CHANGE_PRODUCT_COST = 'shopBasket/CHANGE-PRODUCT-COST';
+import {reset} from 'redux-form';
+
+const ADD_PRODUCT = 'shoppingBasket/ADD-PRODUCT';
+const REMOVE_PRODUCT = 'shoppingBasket/REMOVE-PRODUCT';
+const CHANGE_PRODUCT_COUNT = 'shoppingBasket/CHANGE-PRODUCT-COUNT';
+const CHANGE_PRODUCT_COST = 'shoppingBasket/CHANGE-PRODUCT-COST';
+const SORT_ALPHABETICALLY = 'shoppingBasket/SORT-ALPHABETICALLY';
 
 let initialState = {
     products: [
@@ -9,18 +12,24 @@ let initialState = {
         {id: 2, name: 'Nokia', count: 1, cost: 40, totalCost: null},
         {id: 3, name: 'Siemens C65', count: 2, cost: 1000, totalCost: null},
     ],
+    newProductId: 0,
 }
 
 let appReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case ADD_PRODUCT:
-            let newProductId = state.products.map(product => product.id + 1)
+            state.products.map(product => {
+                if (product.id > state.newProductId) {
+                    state.newProductId = product.id
+                }
+                return null
+            })
             return {
                 ...state,
                 products: [
                     ...state.products,
-                    {id: newProductId, ...action}
+                    {id: state.newProductId + 1, ...action}
                 ]
             }
         case REMOVE_PRODUCT:
@@ -44,7 +53,7 @@ let appReducer = (state = initialState, action) => {
                     }
                 })
             }
-            case CHANGE_PRODUCT_COST:
+        case CHANGE_PRODUCT_COST:
             return {
                 ...state,
                 products: state.products.map(product => {
@@ -59,7 +68,6 @@ let appReducer = (state = initialState, action) => {
                     }
                 })
             }
-
         default:
             return {
                 ...state,
@@ -77,6 +85,10 @@ export const addProduct = ({name, count, cost}) => ({type: ADD_PRODUCT, name, co
 export const removeProduct = (id) => ({type: REMOVE_PRODUCT, id})
 export const changeProductCount = (id, count) => ({type: CHANGE_PRODUCT_COUNT, id, count})
 export const changeProductCost = (id, cost) => ({type: CHANGE_PRODUCT_COST, id, cost})
-
+// thunk
+export const addNewProduct = (values) => dispatch => {
+ dispatch(addProduct(values))
+    dispatch(reset('productCreator'))
+}
 
 export default appReducer

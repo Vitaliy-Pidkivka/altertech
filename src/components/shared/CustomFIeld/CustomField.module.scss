@@ -1,9 +1,11 @@
 .custom-field {
   margin-left: 10px;
+
   &.error {
     textarea, input {
       box-shadow: 0 0 10px red;
       border: 2px solid red;
+      outline: none;
 
       &:focus {
         box-shadow: 0 0 10px red;
@@ -44,9 +46,8 @@
 
 
     &:focus {
-      box-shadow: 0 0 6px #1be1ef;
+      box-shadow: 0 0 10px #1b9aef;
       outline: none;
-
     }
   }
 

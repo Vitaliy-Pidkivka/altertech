@@ -8,6 +8,12 @@ import CustomField from "../shared/CustomFIeld/CustomField";
 const max25 = maxLength(15)
 
 const useStyles = makeStyles({
+    title: {
+        fontWeight: 'bold',
+        textTransform: 'uppercase',
+        margin: '0 0 40px 0',
+        fontSize: 20
+    },
     form: {
         padding: 40,
         background: 'aqua',
@@ -38,12 +44,13 @@ const useStyles = makeStyles({
 
 const ProductCreator = ({handleSubmit, error}) => {
     const classes = useStyles()
-    const {inputGroup, input, button, form, classError} = classes
+    const {inputGroup, input, button, form, classError, title} = classes
 
     return (
         <>
             <form className={form} onSubmit={handleSubmit}>
-                {error && <div className={classError}></div>}
+                <p className={title}>Product creator</p>
+                {error && <div className={classError}> </div>}
                 <div className={inputGroup}>
                     Product name:
                     <Field className={input}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import './App.css';
 import {connect} from "react-redux";
 import TableCell from "@material-ui/core/TableCell";
@@ -11,11 +11,21 @@ import {Paper} from "@material-ui/core";
 import TableBody from "@material-ui/core/TableBody";
 import Product from "./components/Product/Product";
 import ProductCreatorForm from "./components/ProductCreator/ProductCreator";
-import {addProduct, changeProductCost, changeProductCount, removeProduct} from "./redux/appReducer";
-import {getAppProducts} from "./redux/appSelectors";
+import {
+    addNewProduct,
+    changeProductCost,
+    changeProductCount,
+    removeProduct,
+} from "./redux/appReducer";
+import {getAppProducts, getState} from "./redux/appSelectors";
 
 const useStyles = makeStyles({
-
+    title: {
+        fontWeight: 'bold',
+        textTransform: 'uppercase',
+        margin: '25px 0 20px 0',
+        fontSize: 20
+    },
     paper: {
         maxWidth: 650,
         boxShadow: '0 0 10px gray'
@@ -23,19 +33,22 @@ const useStyles = makeStyles({
     table: {
         minWidth: 650,
     },
-
     body: {
         height: '160px',
         overflowY: 'auto',
     },
+    empty:{
+        display: 'none'
+    }
 });
 
-const App = ({products, addProduct, removeProduct, changeProductCount, changeProductCost}) => {
-    const classes = useStyles();
-    const {paper, table, body} = classes
+
+const App = ({products, addNewProduct, removeProduct, changeProductCount, changeProductCost}) => {
+    const classes = useStyles()
+    const {title, paper, table, body, empty} = classes
 
     const onSubmit = (data) => {
-        addProduct(data)
+        addNewProduct(data)
     }
     return (
         <div className="App">
@@ -44,6 +57,7 @@ const App = ({products, addProduct, removeProduct, changeProductCount, changePro
                 <TableContainer className={paper}
                                 component={Paper}
                 >
+                    <p className={title}>Shopping basket</p>
                     <Table className={table}
                            aria-label="simple table"
                     >
@@ -56,16 +70,17 @@ const App = ({products, addProduct, removeProduct, changeProductCount, changePro
                             </TableRow>
                         </TableHead>
                         <TableBody className={body}>
-                            {products.map((row) => <Product {...row}
-                                                            key={row.id}
-                                                            removeProduct={removeProduct}
-                                                            changeProductCount={changeProductCount}
-                                                            changeProductCost={changeProductCost}
-                            />)}
+                            {products.map((row) =>
+                                <Product {...row}
+                                         key={row.id}
+                                         removeProduct={removeProduct}
+                                         changeProductCount={changeProductCount}
+                                         changeProductCost={changeProductCost}
+                                />)}
                         </TableBody>
                         <tfoot>
                         <TableRow>
-                            <TableCell colSpan={1}></TableCell>
+                            <TableCell colSpan={1}><span className={empty}>empty</span></TableCell>
                             <TableCell colSpan={2}><b>Total Price</b></TableCell>
                             <TableCell align="right"> <b>
                                 {products.reduce((acc, {totalCost}) => (acc + totalCost), 0)}
@@ -80,6 +95,8 @@ const App = ({products, addProduct, removeProduct, changeProductCount, changePro
 }
 
 let mapStateToProps = (state) => ({
-    products: getAppProducts(state)
+    products: getAppProducts(state),
+    state: getState(state)
 })
-export default connect(mapStateToProps, {addProduct, removeProduct, changeProductCount, changeProductCost})(App);
+export default connect(mapStateToProps, {addNewProduct, removeProduct, changeProductCount, changeProductCost})(App);
+
