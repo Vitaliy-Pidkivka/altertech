@@ -19,7 +19,7 @@ const initialState = {
     newProductId: 0,
 }
 
-let appReducer = (state = initialState, action) => {
+const appReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case ADD_PRODUCT:

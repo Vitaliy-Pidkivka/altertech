@@ -116,7 +116,7 @@ const App = (props) => {
     );
 }
 
-let mapStateToProps = (state) => ({
+const mapStateToProps = (state) => ({
     products: getAppProducts(state),
     state: getState(state)
 })
