@@ -13,7 +13,7 @@ const SORT_TOTAL_COST_DESCENDING  = 'shoppingBasket/SORT-TOTAL-COST-DESCENDING';
 
 
 
-let initialState = {
+const initialState = {
     products: [
         {id: 1, name: 'Alcatel', count: 3, cost: 30, totalCost: null},
         {id: 2, name: 'Nokia', count: 9, cost: 20, totalCost: null},

@@ -4,7 +4,7 @@ import {reducer as formReducer} from 'redux-form';
 import thunkMiddleWare from 'redux-thunk'
 import {save, load} from "redux-localstorage-simple"
 
-let reducers = combineReducers({
+const reducers = combineReducers({
     app: appReducer,
     form: formReducer,
 })
