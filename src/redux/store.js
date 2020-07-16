@@ -9,8 +9,8 @@ const reducers = combineReducers({
     form: formReducer,
 })
 
-const createStoreWithMiddleware = applyMiddleware(save(),thunkMiddleWare)(createStore)
-const store = createStoreWithMiddleware(reducers, load())
+const createStoreWithMiddleware = applyMiddleware(save({ namespace: "altertech" }),thunkMiddleWare)(createStore)
+const store = createStoreWithMiddleware(reducers, load({ namespace: "altertech" }))
 // const store = createStore(reducers, applyMiddleware(thunkMiddleware, stateSaver))
 window.__store__ = store
 
