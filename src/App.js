@@ -20,18 +20,29 @@ import {
 import {getAppProducts, getState} from "./redux/appSelectors";
 
 const useStyles = makeStyles({
+    root: {
+        minWidth: 650,
+        '& button': {
+            padding: '2px 8px',
+        },
+        '& th': {
+            padding: '2px 8px',
+        },
+
+        '& td':{
+            padding: '2px 8px'
+        },
+
+    },
     title: {
         fontWeight: 'bold',
         textTransform: 'uppercase',
-        margin: '25px 0 20px 0',
+        margin: '10px 0',
         fontSize: 20
     },
     paper: {
         maxWidth: 650,
         boxShadow: '0 0 10px gray'
-    },
-    table: {
-        minWidth: 650,
     },
     body: {
         height: '160px',
@@ -54,7 +65,7 @@ const App = (props) => {
     const {products, addNewProduct, removeProduct, changeProductCount,
         changeProductCost, sortCountAscending, sortCostAscending, sortTotalCostAscending} = props
     const classes = useStyles()
-    const {title, paper, table, body, empty, btn} = classes
+    const {root,title, paper, body, empty, btn} = classes
 
 
     const onSubmit = (data) => {
@@ -68,7 +79,7 @@ const App = (props) => {
                                 component={Paper}
                 >
                     <p className={title}>Shopping basket</p>
-                    <Table className={table}
+                    <Table className={root}
                            aria-label="simple table"
                     >
                         <TableHead>

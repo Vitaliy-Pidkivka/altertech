@@ -8,28 +8,31 @@ import CustomField from "../shared/CustomFIeld/CustomField";
 const max25 = maxLength(15)
 
 const useStyles = makeStyles({
+
     title: {
         fontWeight: 'bold',
         textTransform: 'uppercase',
-        margin: '0 0 40px 0',
+        margin: '0 0 10px 0',
         fontSize: 20
     },
     form: {
-        padding: 40,
+        padding: 20,
         background: 'aqua',
         borderRadius: 10,
-        boxShadow: '0 0 10px gray'
+        boxShadow: '0 0 10px gray',
+        marginRight: 15
     },
     inputGroup: {
-        marginBottom: 20,
+        marginBottom: 15,
         display: 'flex',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        fontSize: 22
     },
     input: {
         marginLeft: 10,
         borderRadius: 8,
         border: '1px solid black',
-        padding: '6px 15px'
+        padding: '2px 4px'
     },
     button: {
         width: '100%'

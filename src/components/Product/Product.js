@@ -6,13 +6,26 @@ import IconButton from "@material-ui/core/IconButton";
 import {makeStyles} from "@material-ui/styles";
 
 const useStyles = makeStyles({
+    root: {
+        '& button': {
+            padding: '0 4px',
+        },
+        '& th': {
+            padding: '0 4px',
+        },
+
+        '& td': {
+            padding: '0 4px'
+        }
+    },
     error: {
         border: '3px solid red',
         outline: 'none',
-        boxShadow: '0 0 4px red'
+        boxShadow: '0 0 4px red',
     },
     cursor: {
         cursor: 'pointer',
+        padding: '0 4px',
         transition: 'all .3s ease',
         '&:hover': {
             background: 'yellow'
@@ -22,7 +35,7 @@ const useStyles = makeStyles({
 
 const Product = ({id, name, count, cost, totalCost, removeProduct, changeProductCount, changeProductCost}) => {
     const classes = useStyles()
-    const {error, cursor} = classes
+    const {error, cursor, root} = classes
 
     const [isEditCount, setIsEditCount] = useState(false)
     const [isEditCost, setIsEditCost] = useState(false)
@@ -56,7 +69,7 @@ const Product = ({id, name, count, cost, totalCost, removeProduct, changeProduct
 
 
     return (
-        <TableRow key={id}>
+        <TableRow key={id} className={root}>
             <TableCell component="th"
                        scope="row">
                 {name}
@@ -73,11 +86,12 @@ const Product = ({id, name, count, cost, totalCost, removeProduct, changeProduct
 
             >
                 {!isEditCount && count}
-                {isEditCount && <input className={(isError && error) || ''}
-                                       type="text"
-                                       autoFocus={true}
-                                       onKeyPress={changeCount}
-                                       placeholder={count}
+                {isEditCount && <input
+                    className={(isError && error) || ''}
+                    type="text"
+                    autoFocus={true}
+                    onKeyPress={changeCount}
+                    placeholder={count}
                 />}
             </TableCell>
             <TableCell align="right"
@@ -92,11 +106,12 @@ const Product = ({id, name, count, cost, totalCost, removeProduct, changeProduct
 
             >
                 {!isEditCost && cost}
-                {isEditCost && <input className={(isError && error) || ''}
-                                      type="text"
-                                      autoFocus={true}
-                                      onKeyPress={changeCost}
-                                      placeholder={cost}
+                {isEditCost && <input
+                    className={(isError && error) || ''}
+                    type="text"
+                    autoFocus={true}
+                    onKeyPress={changeCost}
+                    placeholder={cost}
                 />}
             </TableCell>
             <TableCell align="right">
