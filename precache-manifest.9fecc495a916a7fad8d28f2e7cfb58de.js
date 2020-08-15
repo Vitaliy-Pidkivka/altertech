@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7333a49192cef452969382b78f9f725d",
+    "revision": "f9bd2cbd793992bd97345ea80ae60ed7",
     "url": "/altertech/index.html"
   },
   {
-    "revision": "0a283795bbbd241a6902",
-    "url": "/altertech/static/css/main.7653558c.chunk.css"
+    "revision": "1fc39c0c8b701c9d916a",
+    "url": "/altertech/static/css/main.b01a2353.chunk.css"
   },
   {
     "revision": "08a57054031812c64b08",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/altertech/static/js/2.c77c8a52.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0a283795bbbd241a6902",
-    "url": "/altertech/static/js/main.f3df32d7.chunk.js"
+    "revision": "1fc39c0c8b701c9d916a",
+    "url": "/altertech/static/js/main.fabb9c5f.chunk.js"
   },
   {
     "revision": "61047d9f787f3032aa06",

@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/altertech/static/css/main.7653558c.chunk.css",
-    "main.js": "/altertech/static/js/main.f3df32d7.chunk.js",
-    "main.js.map": "/altertech/static/js/main.f3df32d7.chunk.js.map",
+    "main.css": "/altertech/static/css/main.b01a2353.chunk.css",
+    "main.js": "/altertech/static/js/main.fabb9c5f.chunk.js",
+    "main.js.map": "/altertech/static/js/main.fabb9c5f.chunk.js.map",
     "runtime-main.js": "/altertech/static/js/runtime-main.c708e3b6.js",
     "runtime-main.js.map": "/altertech/static/js/runtime-main.c708e3b6.js.map",
     "static/js/2.c77c8a52.chunk.js": "/altertech/static/js/2.c77c8a52.chunk.js",
     "static/js/2.c77c8a52.chunk.js.map": "/altertech/static/js/2.c77c8a52.chunk.js.map",
     "index.html": "/altertech/index.html",
-    "precache-manifest.8315e07b26b4860067fa69caca9f5034.js": "/altertech/precache-manifest.8315e07b26b4860067fa69caca9f5034.js",
+    "precache-manifest.9fecc495a916a7fad8d28f2e7cfb58de.js": "/altertech/precache-manifest.9fecc495a916a7fad8d28f2e7cfb58de.js",
     "service-worker.js": "/altertech/service-worker.js",
-    "static/css/main.7653558c.chunk.css.map": "/altertech/static/css/main.7653558c.chunk.css.map",
+    "static/css/main.b01a2353.chunk.css.map": "/altertech/static/css/main.b01a2353.chunk.css.map",
     "static/js/2.c77c8a52.chunk.js.LICENSE.txt": "/altertech/static/js/2.c77c8a52.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c708e3b6.js",
     "static/js/2.c77c8a52.chunk.js",
-    "static/css/main.7653558c.chunk.css",
-    "static/js/main.f3df32d7.chunk.js"
+    "static/css/main.b01a2353.chunk.css",
+    "static/js/main.fabb9c5f.chunk.js"
   ]
 }
